@@ -3,6 +3,8 @@ class Negociacao {
     this._data = data
     this._quantidade = quantidade
     this._valor = valor
+    //freeze torna o objeto imutável
+    Object.freeze(this)
   }
   //métodos acessadores
   get volume() {
