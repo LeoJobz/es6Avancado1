@@ -12,23 +12,16 @@ class NegociacaoController {
     event.preventDefault();
 
     let data = new Date(
-      ...this._inputData.value.split("-").map(function(item, indice) {
-        //acessando somente o mês
-        return item - indice % 2
-      })
+      //acessando somente o mês
+      ...this._inputData.value
+        .split("-")
+        .map((item, indice) => item - (indice % 2))
     );
-    console.log(data);
 
-    // console.log(typeof this._inputData.value);
-
-    // console.log(this._inputData.value);
-
-    // let negociacao = new Negociacao(
-    //   this._inputData.value,
-    //   this._inputQuantidade.value,
-    //   this._inputValor.value
-    // );
-
-    // console.log(negociacao)
+    let negociacao = new Negociacao(
+      data,
+      this._inputQuantidade.value,
+      this._inputValor.value
+    );
   }
 }
