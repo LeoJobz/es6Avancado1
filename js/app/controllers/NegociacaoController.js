@@ -1,12 +1,15 @@
 class NegociacaoController {
   constructor() {
     //mantendo o querySelector associado ao document
-    let $ = document.querySelector.bind(document);
+    let $ = document.querySelector.bind(document)
 
-    this._inputData = $("#data");
-    this._inputQuantidade = $("#quantidade");
-    this._inputValor = $("#valor");
-    this._listaNegociacoes = new ListaNegociacoes();
+    this._inputData = $("#data")
+    this._inputQuantidade = $("#quantidade")
+    this._inputValor = $("#valor")
+    this._listaNegociacoes = new ListaNegociacoes()
+    this._negociacoesView = new NegociacoesView($('#negociacoesView'))
+
+    this._negociacoesView.update()
   }
 
   adiciona(event) {
